@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    height: 100vh;
+    background: #f2f2f2;
+}
+
+.contenedor{
+    width: 900px;
+    height: 550px;
+    background: white;
+    margin: 40px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+
+
+.lado-izquierdo{
+    width: 50%;
+    padding: 50px;
+}
+
+.saludo h3{
+    color: #444;
+}
+
+.saludo h1{
+    color: #7b5cff;
+    margin-bottom: 40px;
+}
+
+.titulo{
+    margin-bottom: 30px;
+}
+
+.titulo h2{
+    margin-top: 10px;
+    color: #333;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs label{
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.inputs input{
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 10px;
+    outline: none;
+}
+
+.extra{
+    text-align: right;
+}
+
+.extra a{
+    text-decoration: none;
+    color: #777;
+    font-size: 14px;
+}
+
+.botones button{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #7b5cff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.crear{
+    text-align: center;
+}
+
+.crear a{
+    text-decoration: none;
+    color: #666;
+}
+
+
+
+.lado-derecho{
+    width: 50%;
+    background: #7b5cff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido-derecho h1{
+    color: white;
+    font-size: 40px;
+}
