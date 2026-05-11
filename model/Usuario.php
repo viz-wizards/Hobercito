@@ -9,17 +9,17 @@ class Usuario{
         $this->pdo = $database->conectar();
     }
 
-    public function login(string $nombre, string $clave): ?array{
+    // ✅ LOGIN
+    public function login(string $correo, string $clave): ?array{
 
-        $sql = "SELECT * FROM usuario WHERE nombre = :nombre LIMIT 1";
+        $sql = "SELECT * FROM usuario WHERE correo = :correo LIMIT 1";
 
         $stmt = $this->pdo->prepare($sql);
-
         $stmt->execute([
-            'nombre' => $nombre
+            'correo' => $correo
         ]);
 
-        $usuario = $stmt->fetch();
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if(!$usuario){
             return null;
@@ -33,6 +33,46 @@ class Usuario{
         }
 
         return null;
+    }
+
+    // ✅ VERIFICAR CORREO
+    public function correoExiste(string $correo): bool{
+
+        $sql = "SELECT id_usuario FROM usuario WHERE correo = :correo";
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([
+            'correo' => $correo
+        ]);
+
+        return $stmt->rowCount() > 0;
+    }
+
+    // ✅ REGISTRAR USUARIO
+    public function registrar(
+        string $nombre,
+        string $apellido,
+        string $correo,
+        string $clave
+    ): int{
+
+        $passwordHash = password_hash($clave, PASSWORD_DEFAULT);
+
+        $sql = "INSERT INTO usuario(nombre, apellido, correo, clave)
+                VALUES(:nombre, :apellido, :correo, :clave)";
+
+        $stmt = $this->pdo->prepare($sql);
+
+        if($stmt->execute([
+            'nombre' => $nombre,
+            'apellido' => $apellido,
+            'correo' => $correo,
+            'clave' => $passwordHash
+        ])){
+            return (int)$this->pdo->lastInsertId();
+        }
+
+        return 0;
     }
 }
 ?>

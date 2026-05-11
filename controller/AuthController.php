@@ -1,4 +1,6 @@
 <?php
+session_start();
+AuthController::verificarSesion();
 require_once __DIR__ . '/../model/Usuario.php';
 
 class AuthController
@@ -18,13 +20,14 @@ class AuthController
         return false;
     }
 
-      public function registrar(
+    public function registrar(
         string $nombre,
         string $apellido,
         string $correo,
         string $clave,
         string $confirmarClave
     ): array {
+
         if ($nombre === '' || $apellido === '' || $correo === '' || $clave === '' || $confirmarClave === '') {
             return [
                 'ok' => false,
@@ -83,5 +86,14 @@ class AuthController
             header('Location: login.php');
             exit;
         }
+    }
+
+     public static function logout(): void
+    {
+        session_unset();
+        session_destroy();
+
+        header('Location: login.php');
+        exit;
     }
 }

@@ -1,10 +1,10 @@
 <?php
-
 session_start();
 
 require_once __DIR__ . '/../controller/AuthController.php';
 
 $mensaje = '';
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -26,17 +26,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         } else {
 
-            $mensaje = 'Correo o clave incorrectos';
+            $mensaje = 'LOGIN ERROR';
         }
     }
 }
-
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -49,100 +48,96 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../assetes/css/style.css">
 
     <title>Login</title>
+
 </head>
 
 <body>
 
-<header></header>
 <main>
 
-    <div class="contenedor">
+<div class="contenedor">
 
-       
-        <div class="lado-izquierdo">
+    <!-- LADO IZQUIERDO -->
+    <div class="lado-izquierdo">
 
-            <div class="saludo">
-                <h3>Hello!</h3>
-                <h1>Good Morning</h1>
-            </div>
-
-            <div class="caja">
-
-                <div class="titulo">
-                    <h2>Login your account</h2>
-                </div>
-
-                <?php if ($mensaje !== ''): ?>
-                    <p class="mensaje error">
-                        <?php echo htmlspecialchars($mensaje, ENT_QUOTES, 'UTF-8'); ?>
-                    </p>
-                <?php endif; ?>
-
-                <form action="" method="post" id="frmFormulario">
-
-                    <div class="inputs">
-                        <label for="txtUser">Usuario</label>
-                        <input 
-                            type="text" 
-                            name="txtUser" 
-                            id="txtUser" 
-                            placeholder="Ingrese usuario"
-                        >
-                    </div>
-
-                    <br>
-
-                    <div class="inputs">
-                        <label for="txtPass">Contraseña</label>
-                        <input 
-                            type="password" 
-                            name="txtPass" 
-                            id="txtPass" 
-                            placeholder="Ingrese clave"
-                        >
-                    </div>
-
-                    <br>
-
-                    <div class="extra">
-                        <a href="#">¿Olvidó su contraseña?</a>
-                    </div>
-
-                    <br>
-
-                    <div class="botones">
-                        <button type="submit" id="btnPrimary">
-                            Ingresar
-                        </button>
-                    </div>
-
-                    <br>
-
-                    <div class="crear">
-                        <a href="#">Crear cuenta</a>
-                    </div>
-
-                </form>
-
-            </div>
-
+        <div class="saludo">
+            <h3>Hello!</h3>
+            <h1>Good Morning</h1>
         </div>
 
-       
-        <div class="lado-derecho">
+        <div class="caja">
 
-            <div class="contenido-derecho">
-                <h1>WELCOME</h1>
+            <div class="titulo">
+                <h2>Login your account</h2>
             </div>
+
+            <!-- MENSAJE ERROR -->
+            <?php if ($mensaje !== ''): ?>
+                <p class="mensaje error">
+                    <?php echo htmlspecialchars($mensaje); ?>
+                </p>
+            <?php endif; ?>
+
+            <form method="post">
+
+                <div class="inputs">
+                    <label>Usuario</label>
+                    <input
+                        type="text"
+                        name="txtUser"
+                        placeholder="Ingrese correo"
+                        required
+                    >
+                </div>
+
+                <br>
+
+                <div class="inputs">
+                    <label>Contraseña</label>
+                    <input
+                        type="password"
+                        name="txtPass"
+                        placeholder="Ingrese clave"
+                        required
+                    >
+                </div>
+
+                <br>
+
+                <div class="extra">
+                    <a href="olvido_contra.php">¿Olvidó su contraseña?</a>
+                </div>
+
+                <br>
+
+                <div class="botones">
+                    <button type="submit" id="btnPrimary">
+                        Ingresar
+                    </button>
+                </div>
+
+                <br>
+
+                <div class="crear">
+                    <a href="crearcuenta.php">Crear cuenta</a>
+                </div>
+
+            </form>
 
         </div>
 
     </div>
 
-</main>
-<footer>
+    <!-- LADO DERECHO -->
+    <div class="lado-derecho">
+        <div class="contenido-derecho">
+            <h1>WELCOME</h1>
+        </div>
+    </div>
 
-</footer>
+</div>
+
+</main>
 
 <script src="../assetes/js/app.js"></script>
 

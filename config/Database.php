@@ -1,7 +1,7 @@
 <?php
 class Database{
     private string $host = 'localhost';
-    private string $db = 'hobercito';
+    private string $db = 'Hobercitobc_db';
     private string $user = 'root';
     private string $pass = '';
     private string $charset = "utf8mb4";

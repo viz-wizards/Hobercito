@@ -1,0 +1,311 @@
+/* =========================
+   RESET GENERAL
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+    background: #1e1e2f;
+    color: white;
+}
+
+/* LINEA SUPERIOR */
+.lineaSuperior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.linaSupIzquierda {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.linaSupIzquierda img {
+    width: 40px;
+}
+
+.lineaSupDerecha a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.lineaSupDerecha a:hover {
+    color: #00c3ff;
+}
+
+/* LINEA INFERIOR */
+.lineaInferior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2a2a40;
+    padding: 10px 30px;
+}
+
+.lineaInferior ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.lineaInferior ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.lineaInferior ul li a:hover {
+    color: #00c3ff;
+}
+
+/* BUSCADOR */
+.cajaBusca {
+    display: flex;
+    gap: 5px;
+}
+
+.cajaBusca input {
+    padding: 5px;
+}
+
+/* =========================
+   LAYOUT PRINCIPAL
+========================= */
+main {
+    display: flex;
+}
+
+/* MENU VERTICAL */
+.menu_vertical {
+    width: 200px;
+    background: #111;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.menu_vertical ul {
+    list-style: none;
+}
+
+.menu_vertical ul li {
+    margin-bottom: 15px;
+}
+
+.menu_vertical ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.menu_vertical ul li a:hover {
+    background: #00c3ff;
+    color: black;
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+.contenido-reportes {
+    flex: 1;
+    padding: 20px;
+}
+
+.panel-reportes {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* ENCABEZADO */
+.encabezado-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.usuario-activo {
+    background: #00c3ff;
+    padding: 8px 12px;
+    border-radius: 20px;
+    color: white;
+}
+
+/* FORMULARIO */
+.form-reporte {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.grid-filtros-reporte {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.grupo-input label {
+    font-size: 12px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.grupo-input input,
+.grupo-input select {
+    width: 100%;
+    padding: 6px;
+}
+
+/* BOTONES */
+.botones-reporte {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-principal {
+    background: #00c3ff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: white;
+}
+
+.btn-secundario {
+    background: gray;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+.btn-imprimir {
+    background: green;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+.tarjetas-resumen {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tarjeta-reporte {
+    background: white;
+    flex: 1;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.tarjeta-reporte strong {
+    font-size: 20px;
+}
+
+/* COLORES */
+.pendiente { border-left: 5px solid orange; }
+.confirmada { border-left: 5px solid blue; }
+.cancelada { border-left: 5px solid red; }
+.atendida { border-left: 5px solid green; }
+
+/* =========================
+   TABLA
+========================= */
+.tabla-responsive {
+    overflow-x: auto;
+}
+
+.tabla-reportes {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.tabla-reportes th,
+.tabla-reportes td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tabla-reportes th {
+    background: #1e1e2f;
+    color: white;
+}
+
+/* BADGE */
+.badge-estado {
+    padding: 4px 8px;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+}
+
+.pendiente { background: orange; }
+.confirmada { background: blue; }
+.cancelada { background: red; }
+.atendida { background: green; }
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: #1e1e2f;
+    color: white;
+    padding: 20px;
+}
+
+.redes_sociales {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.redes img {
+    width: 30px;
+}
+
+.contacto {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.contacto a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .grid-filtros-reporte {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjetas-resumen {
+        flex-direction: column;
+    }
+}
